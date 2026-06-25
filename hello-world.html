@@ -4,140 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --ink: #f8fafc;
-      --muted: #b8c4d9;
-      --blue: #7dd3fc;
-      --pink: #f0abfc;
-      --green: #86efac;
-      --panel: rgba(15, 23, 42, 0.58);
-      --line: rgba(255, 255, 255, 0.18);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 20% 25%, rgba(125, 211, 252, 0.32), transparent 28rem),
-        radial-gradient(circle at 80% 15%, rgba(240, 171, 252, 0.28), transparent 25rem),
-        radial-gradient(circle at 50% 90%, rgba(134, 239, 172, 0.22), transparent 28rem),
-        #07111f;
-    }
-
-    .grid {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle, black, transparent 72%);
-      animation: drift 12s linear infinite;
-    }
-
-    main {
-      position: relative;
-      width: min(92vw, 760px);
-      padding: clamp(2rem, 7vw, 5rem);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: var(--panel);
-      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
-      backdrop-filter: blur(22px);
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      gap: 0.5rem;
-      align-items: center;
-      padding: 0.45rem 0.8rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.88rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .spark {
-      width: 0.55rem;
-      height: 0.55rem;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 22px var(--green);
-    }
-
-    h1 {
-      margin: 1.2rem 0 0.75rem;
-      font-size: clamp(3.4rem, 13vw, 8.5rem);
-      line-height: 0.9;
-      letter-spacing: 0;
-    }
-
-    h1 span {
-      display: block;
-      color: transparent;
-      background: linear-gradient(110deg, var(--blue), var(--pink), var(--green));
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    p {
-      max-width: 42rem;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      line-height: 1.7;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3rem;
-      margin-top: 2rem;
-      padding: 0 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      color: #07111f;
-      background: #f8fafc;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 14px 40px rgba(125, 211, 252, 0.22);
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 52px rgba(240, 171, 252, 0.25);
-    }
-
-    @keyframes drift {
-      to {
-        transform: translate3d(42px, 42px, 0);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="home-page">
   <div class="grid" aria-hidden="true"></div>
+  <nav aria-label="Main navigation">
+    <a href="hello-world.html" aria-current="page">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
   <main>
     <div class="badge"><span class="spark"></span>First page online</div>
     <h1>Hello <span>World</span></h1>
     <p>A small, shiny HTML page with glassy depth, soft color, and just enough motion to feel alive.</p>
-    <a class="button" href="#" onclick="event.preventDefault(); alert('Hello from your fancy page!');">Say hello</a>
+    <button class="button" type="button" id="helloButton">Say hello</button>
   </main>
 </body>
 </html>
